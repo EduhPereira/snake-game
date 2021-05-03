@@ -26,7 +26,7 @@ const createSnake = () => {
 
 const createFood = () => {
     context.fillStyle = 'red';
-    context.fillRect = (food.x, food.y, box, box);
+    context.fillRect(food.x, food.y, box, box);
 }
 
 document.addEventListener('keydown', updateDirection);
@@ -45,9 +45,16 @@ const startGame = () => {
     if(snake[0].y > 15 * box && direction == 'down') snake[0].y = 0;
     if(snake[0].y < 0 && direction == 'up') snake[0].y = 16 * box;
 
+    for(let i = 1; i < snake.length; i++){
+        if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
+            clearInterval(startGame);
+            alert('Game Over');
+        }
+    }
+
     createBG();
-    createSnake();
     createFood();
+    createSnake();
 
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
@@ -57,7 +64,12 @@ const startGame = () => {
     if(direction === 'up') snakeY -= box;
     if(direction === 'down') snakeY += box;
 
-    snake.pop();
+    if(snakeX != food.x || snakeY != food.y){
+        snake.pop();
+    }else{
+        food.x = Math.floor(Math.random() * 15 + 1 ) * box;
+        food.y = Math.floor(Math.random() * 15 + 1 ) * box;
+    }
 
     let newHead = {
         x: snakeX,
