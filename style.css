@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: square;
+    outline: none;
+}
+
+:root{}
+
+body{
+    background-image: linear-gradient(black, lightgreen);
+    color: whitesmoke;
+    font-family: 'Press Start 2P', cursive;
+    width: 100vw;
+    height: 100vh;
+    padding: 15px;
+}
+
+.game{
+    display: flex;
+}
+
+.title{
+    text-transform: uppercase;
+    text-align: center;
+    margin: 18px 0;
+}
+
+.subtitle{
+    text-transform: uppercase;
+}
+
+.instructions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 30vw;
+
+    font-size: 13px;
+}
+
+.instructions__img{
+    width: 190px;
+    height: 170px;
+    margin: 40px 0 40px;
+}
+
+.instructions__list{
+    font-weight: 500;
+}
+
+.instructions__list li{
+    margin: 10px 0;
+}
+
+.game__board{
+    display: flex;
+    flex-direction: column;
+}
+
+.game__board__buttons{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0 0;
+}
+
+button{
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    border: none;
+    padding: 10px;
+    width: 150px;
+    cursor: pointer;
+    border: 1px solid black;
+
+    transition: all .3s linear;
+}
+
+button:hover{
+    color: white;
+}
+
+.play:hover{
+    background-color: green;
+}
+
+.restart:hover{
+    background-color: red;
+}
+
+.scoreboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+
+    font-size: 13px;
+}
+
+.subtitle__score{
+    margin: 0 0 50px;
+}
+
+.score{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 30px;
+    
+    background-color: rgba(255, 255, 255, 0.2);
+}
