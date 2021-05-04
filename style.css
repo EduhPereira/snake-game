@@ -8,11 +8,20 @@
     outline: none;
 }
 
-:root{}
+:root{
+    --background-color-1: black;
+    --background-color-2: lightgreen;
+    --text-color: whitesmoke;
+    --border-color: black;
+    --easyBtn-hover-background-color: green;
+    --normalBtn-hover-background-color: goldenrod;
+    --hardBtn-hover-background-color: red;
+    --scoreboard-background-color: rgba(255, 255, 255, 0.2);
+}
 
 body{
-    background-image: linear-gradient(black, lightgreen);
-    color: whitesmoke;
+    background-image: linear-gradient(var(--background-color-1), var(--background-color-2));
+    color: var(--text-color);
     font-family: 'Press Start 2P', cursive;
     width: 100vw;
     height: 100vh;
@@ -65,7 +74,7 @@ body{
 }
 
 #snake{
-    border: 3px solid black;
+    border: 3px solid var(--border-color);
     background-image: url('./images/initial-screen.png');
     object-fit: cover;
     background-size: cover;
@@ -85,7 +94,7 @@ button{
     padding: 10px;
     width: 100px;
     cursor: pointer;
-    border: 3px solid black;
+    border: 3px solid var(--border-color);
 
     transition: all .3s linear;
 }
@@ -96,18 +105,19 @@ button:not(:last-child){
 
 button:hover{
     color: white;
+    transform: translateY(6px);
 }
 
 .easy:hover{
-    background-color: green;
+    background-color: var(--easyBtn-hover-background-color);
 }
 
 .normal:hover{
-    background-color: goldenrod;
+    background-color: var(--normalBtn-hover-background-color);
 }
 
 .hard:hover{
-    background-color: red;
+    background-color: var(--hardBtn-hover-background-color);
 }
 
 .scoreboard{
@@ -133,5 +143,5 @@ button:hover{
     
     font-size: 30px;
     
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--scoreboard-background-color);
 }
